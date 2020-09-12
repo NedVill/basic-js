@@ -55,19 +55,18 @@ class VigenereCipheringMachine {
 				continue
 			}
 
-			if (mode === 'encrypt') {
-				let keyNum = (this.messageArray[i].charCodeAt() - 97) + (this.keyArray[step].charCodeAt() - 96);
+			let keyNum = 0;
 
-				keyNum > 26 ? keyNum = keyNum - 26 : '';
-				this.encodeArr.push(String.fromCharCode(keyNum + 96).toUpperCase());
+			if (mode === 'encrypt') {
+				keyNum = (this.messageArray[i].charCodeAt() - 97) + (this.keyArray[step].charCodeAt() - 96);
 			}
 
 			if (mode === 'decrypt') {
-				let keyNum = (this.messageArray[i].charCodeAt() - 96) - (this.keyArray[step].charCodeAt() - 96) + 27;
-				
-				keyNum > 26 ? keyNum = keyNum - 26 : '';
-				this.encodeArr.push(String.fromCharCode(keyNum + 96).toUpperCase());
+				keyNum = (this.messageArray[i].charCodeAt() - 96) - (this.keyArray[step].charCodeAt() - 96) + 27;
 			}
+
+			keyNum > 26 ? keyNum = keyNum - 26 : '';
+			this.encodeArr.push(String.fromCharCode(keyNum + 96).toUpperCase());
 
 			step++
 		}
