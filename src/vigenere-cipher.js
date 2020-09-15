@@ -13,7 +13,7 @@ class VigenereCipheringMachine {
 			throw new Error;
 		}
 
-		if (typeof message !== 'string' && typeof message !== 'string') {
+		if (typeof message !== 'string') {
 			throw new Error;
 		}
 
@@ -27,7 +27,7 @@ class VigenereCipheringMachine {
 			throw new Error;
 		}
 
-		if (typeof message !== 'string' && typeof message !== 'string') {
+		if (typeof message !== 'string') {
 			throw new Error;
 		}
 		
